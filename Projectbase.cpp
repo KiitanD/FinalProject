@@ -37,20 +37,23 @@ class cylindricalBlocks: public sqrBaseRectBlocks{
             diameter = w;
             radius = diameter/2;
             float volume = M_PI * pow(radius, 2) * l;
-            surface_area = 2 * M_PI * radius * (radius + l);
+            float surface_area = 2 * M_PI * radius * (radius + l);
         };
 };
 
 class cuboidBlocks: public sqrBaseRectBlocks {
     public:
-        cuboidBlocks() {
-
-        };
+        cuboidBlocks(int w, int h, int l): sqrBaseRectBlocks(w, h, l) {};
 };
 
 class sphericalBlocks: public cuboidBlocks {
     public:
-        sphericalBlocks() {
-
+        int diameter;
+        int radius;
+        sphericalBlocks(int w, int h, int l): cuboidBlocks(w, h, l) {
+            diameter = w;
+            radius = diameter/2;
+            float volume = 4 * M_PI * pow(radius, 3)/3;
+            float surface_area = 4 * M_PI * power(radius, 2);
         };
 };
