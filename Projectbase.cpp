@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <cmath>
 using namespace std;
 
 
@@ -8,23 +9,35 @@ using namespace std;
 //class definitions
 class rectBlocks {
     public:
-        rectBlocks() {
-
+        int width;
+        int height;
+        int length;
+        int volume;
+        int surface_area;
+        rectBlocks(int w, int h, int l) {
+            width = w;
+            height = h;
+            length = l;
+            volume = h * w * l;
+            surface_area = 2*(h*w) + 2*(h*l) + 2*(w*l);
         };
 };
 
 
 class sqrBaseRectBlocks: public rectBlocks {
     public:
-        sqrBaseRectBlocks() {
-
-        };
+        sqrBaseRectBlocks(int w, int h, int l):rectBlocks(w, h, l) {};
 };
 
 class cylindricalBlocks: public sqrBaseRectBlocks{
     public:
-        cylindricalBlocks() {
-
+        int diameter;
+        int radius;
+        cylindricalBlocks(int w, int h, int l): sqrBaseRectBlocks(w, h, l) {
+            diameter = w;
+            radius = diameter/2;
+            float volume = M_PI * pow(radius, 2) * l;
+            surface_area = 2 * M_PI * radius * (radius + l);
         };
 };
 
