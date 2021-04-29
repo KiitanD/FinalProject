@@ -19,7 +19,7 @@ class rectBlocks {
             height = h;
             length = l;
             volume = h * w * l;
-            surface_area = 2*(h*w) + 2*(h*l) + 2*(w*l);
+            surface_area = 2*(h*w) + 2*(h*l) + 2*(w*l);    
         };
 };
 
@@ -54,6 +54,7 @@ class sphericalBlocks: public cuboidBlocks {
             diameter = w;
             radius = diameter/2;
             float volume = 4 * M_PI * pow(radius, 3)/3;
-            float surface_area = 4 * M_PI * power(radius, 2);
+            float surface_area = 4 * M_PI * pow(radius, 2);
         };
 };
+
