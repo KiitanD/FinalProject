@@ -4,5 +4,6 @@
 
 #include "mainheader.h"
 int main() {
-    createArray("dataBlocks.dat");
+    createRectArray("dataBlocks.dat");
+    createSqrArray(rectBlockObjects);
 }
