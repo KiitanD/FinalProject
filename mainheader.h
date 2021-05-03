@@ -11,6 +11,7 @@
 #include <cmath>
 #include <fstream>
 #include <string>
+#include <iterator>
 
 void createArray(std::string filename);
 

@@ -88,3 +88,10 @@ void createArray(std::string fileName) {
     else cout << "Unable to open file.";
     cout << rectBlockObjects.size() << endl;
 }
+
+
+//function for sorting sphericalBlocks array based on diameter
+bool greaterDiameter(sphericalBlocks block1, sphericalBlocks block2) {
+    return (block1.diameter > block2.diameter);
+}
+
