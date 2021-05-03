@@ -1,9 +1,5 @@
-#include <iostream>
-#include <algorithm>
-#include <vector>
-#include <cmath>
+#include "mainheader.h"
 using namespace std;
-
 
 
 //class definitions
@@ -14,6 +10,11 @@ class rectBlocks {
         int length;
         int volume;
         int surface_area;
+        rectBlocks() {
+            width = 0;
+            height = 0;
+            length = 0;
+        }
         rectBlocks(int w, int h, int l) {
             width = w;
             height = h;
@@ -58,3 +59,32 @@ class sphericalBlocks: public cuboidBlocks {
         };
 };
 
+
+/*
+ * function takes a file containing dimensions
+ * as a parameter, creates objects from the
+ * dimensions, then stores the objects in a vector.
+ *
+ */
+void createArray(std::string fileName) {
+    //creating empty vector
+    vector<rectBlocks> rectBlockObjects;
+
+    //reading the file
+    ifstream dataFile(fileName);
+    if (dataFile.is_open()) {
+        while(dataFile) {
+            //creating rectBlock object
+            rectBlocks rectBlock;
+
+            dataFile >> rectBlock.width;
+            dataFile >> rectBlock.height;
+            dataFile >> rectBlock.length;
+
+            rectBlockObjects.push_back(rectBlock);
+        }
+        dataFile.close();
+    }
+    else cout << "Unable to open file.";
+    cout << rectBlockObjects.size() << endl;
+}
