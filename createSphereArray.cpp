@@ -1,4 +1,5 @@
 #include "mainheader.h"
+#include "createSphereArray.h"
 vector<sphericalBlocks> sphereObjects;
 
 vector<sphericalBlocks> createSphereArray(vector<cuboidBlocks> Cubes) {
@@ -10,4 +11,15 @@ vector<sphericalBlocks> createSphereArray(vector<cuboidBlocks> Cubes) {
     cout << sphereObjects.size() << endl;
     return sphereObjects;
     
+}
+bool greaterDiameter(sphericalBlocks block1, sphericalBlocks block2) {
+    return (block1.diameter > block2.diameter);
+}
+
+void sortAndPrintSphere(vector<sphericalBlocks> sphereObject) {
+    sort(sphereObject.begin(), sphereObject.end(), greaterDiameter);
+    for(sphericalBlocks sb : sphereObject) {
+        cout << "Spherical Surface Area: " << sb.surface_area << endl;
+        cout << "Volume: " << sb.volume << endl;
+    }
 }
