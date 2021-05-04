@@ -1,12 +1,19 @@
-//
-// Created by excel on 03/05/2021.
-//
 
 #include "mainheader.h"
+#include "createCylinderArray.h"
+#include "createSphereArray.h"
+
 int main() {
     createRectArray("dataBlocks.dat");
     createSqrArray(rectBlockObjects);
-    createCylinderArray(sqrBaseObjects);
+    vector<cylindricalBlocks> cylinderBlockObjects = createCylinderArray(sqrBaseObjects);
     createCubeArray(sqrBaseObjects);
-    createSphereArray(cubeObjects);
+    vector<sphericalBlocks> sphericalBlockObjects = createSphereArray(cubeObjects);
+
+    //sorting the vectors and displaying respective values:
+    //sphere objects
+    sortAndPrintSphere(sphericalBlockObjects);
+
+    //cylindrical objects
+    sortAndPrintCylinder(cylinderBlockObjects);
 }
