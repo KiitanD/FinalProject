@@ -80,4 +80,10 @@ extern vector<sqrBaseRectBlocks> sqrBaseObjects;
 
 vector<cylindricalBlocks> createCylinderArray(vector<sqrBaseRectBlocks> Sqrs);
 extern vector<cylindricalBlocks> CylinderObjects;
+
+vector<cuboidBlocks> createCubeArray(vector<sqrBaseRectBlocks> Sqrs);
+extern vector<cuboidBlocks> cubeObjects;
+
+vector<sphericalBlocks> createSphereArray(vector<cuboidBlocks> Cubes);
+extern vector<sphericalBlocks> sphereObjects;
 #endif //FINALPROJECT_MAINHEADER_H

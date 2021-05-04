@@ -6,4 +6,7 @@
 int main() {
     createRectArray("dataBlocks.dat");
     createSqrArray(rectBlockObjects);
+    createCylinderArray(sqrBaseObjects);
+    createCubeArray(sqrBaseObjects);
+    createSphereArray(cubeObjects);
 }
