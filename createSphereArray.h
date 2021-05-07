@@ -1,7 +1,4 @@
-//
-// Created by excel on 04/05/2021.
-//
-
+//Excel Chukwu and Kiitan Doherty 
 #ifndef FINALPROJECT_CREATESPHEREARRAY_H
 #define FINALPROJECT_CREATESPHEREARRAY_H
 

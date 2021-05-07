@@ -1,7 +1,4 @@
-//
-// Created by excel on 03/05/2021.
-//
-
+//Excel Chukwu and Kiitan Doherty 
 #ifndef FINALPROJECT_MAINHEADER_H
 #define FINALPROJECT_MAINHEADER_H
 

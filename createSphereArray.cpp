@@ -1,3 +1,4 @@
+//Excel Chukwu and Kiitan Doherty 
 #include "mainheader.h"
 #include "createSphereArray.h"
 vector<sphericalBlocks> sphereObjects;
