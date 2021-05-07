@@ -8,10 +8,8 @@ vector<sqrBaseRectBlocks> createSqrArray(vector<rectBlocks> Rects) {
             sqrBaseRectBlocks sb = sqrBaseRectBlocks(rb.width, rb.height, rb.length);
             
             sqrBaseObjects.push_back(sb);
-            cout << "Object" << sb.width << sb.height << sb.length << endl;
         }
     }
-    cout<< sqrBaseObjects.size() << endl;
     return sqrBaseObjects;
     
 }

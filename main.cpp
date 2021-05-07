@@ -6,14 +6,14 @@
 int main() {
     createRectArray("dataBlocks.dat");
     createSqrArray(rectBlockObjects);
-    vector<cylindricalBlocks> cylinderBlockObjects = createCylinderArray(sqrBaseObjects);
+    createCylinderArray(sqrBaseObjects);
     createCubeArray(sqrBaseObjects);
-    vector<sphericalBlocks> sphericalBlockObjects = createSphereArray(cubeObjects);
+    createSphereArray(cubeObjects);
 
     //sorting the vectors and displaying respective values:
     //sphere objects
-    sortAndPrintSphere(sphericalBlockObjects);
+    sortAndPrintSphere(sphereObjects);
 
     //cylindrical objects
-    sortAndPrintCylinder(cylinderBlockObjects);
+    sortAndPrintCylinder(cylinderObjects);
 }

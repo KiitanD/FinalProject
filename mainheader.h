@@ -46,12 +46,14 @@ class sqrBaseRectBlocks: public rectBlocks {
 class cylindricalBlocks: public sqrBaseRectBlocks{
     public:
         int diameter;
-        int radius;
+        float radius;
+        float volume;
+        float surface_area;
         cylindricalBlocks(int w, int h, int l): sqrBaseRectBlocks(w, h, l) {
             diameter = w;
-            radius = diameter/2;
-            float volume = M_PI * pow(radius, 2) * l;
-            float surface_area = 2 * M_PI * radius * (radius + l);
+            radius = w/2.0;
+            volume = M_PI * pow(radius, 2) * l;
+            surface_area = (2 * M_PI * pow(radius,2)) + (2 * M_PI * radius * l);
         };
 };
 
@@ -63,12 +65,14 @@ class cuboidBlocks: public sqrBaseRectBlocks {
 class sphericalBlocks: public cuboidBlocks {
     public:
         int diameter;
-        int radius;
+        float radius;
+        float surface_area;
+        float volume;
         sphericalBlocks(int w, int h, int l): cuboidBlocks(w, h, l) {
             diameter = w;
-            radius = diameter/2;
-            float volume = 4 * M_PI * pow(radius, 3)/3;
-            float surface_area = 4 * M_PI * pow(radius, 2);
+            radius = diameter/2.0;
+            volume = 4 * M_PI * pow(radius, 3)/3;
+            surface_area = 4 * M_PI * pow(radius, 2);
         };
 };
 
@@ -79,7 +83,7 @@ vector<sqrBaseRectBlocks> createSqrArray(vector<rectBlocks> rectBlockObjects);
 extern vector<sqrBaseRectBlocks> sqrBaseObjects;
 
 vector<cylindricalBlocks> createCylinderArray(vector<sqrBaseRectBlocks> Sqrs);
-extern vector<cylindricalBlocks> CylinderObjects;
+extern vector<cylindricalBlocks> cylinderObjects;
 
 vector<cuboidBlocks> createCubeArray(vector<sqrBaseRectBlocks> Sqrs);
 extern vector<cuboidBlocks> cubeObjects;
